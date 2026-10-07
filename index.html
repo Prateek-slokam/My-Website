@@ -4,10 +4,20 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#0d261b">
+<meta name="description" content="Product Manager in Bengaluru. Singer, and contributor to the Shikshagraha movement.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://prateek-slokam.github.io/My-Website/">
+<meta property="og:title" content="Prateek | Product Manager">
+<meta property="og:description" content="Product Manager in Bengaluru. Singer, and contributor to the Shikshagraha movement.">
+<meta property="og:image" content="https://prateek-slokam.github.io/My-Website/assets/icon-512.png">
+<meta name="twitter:card" content="summary">
+<meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="Prateek">
 <link rel="manifest" href="assets/manifest.json">
+<link rel="apple-touch-icon" href="assets/icon-192.png">
+<script>document.documentElement.classList.add('js');</script>
 <title>Prateek | Product Manager</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&family=Caveat:wght@600&display=swap" rel="stylesheet">
@@ -130,11 +140,13 @@
   section {
     padding: 90px 0;
     border-bottom: 1px solid var(--line);
+  }
+  .js section {
     opacity: 0;
     transform: translateY(24px);
     transition: opacity 0.7s ease, transform 0.7s ease;
   }
-  section.visible { opacity: 1; transform: translateY(0); }
+  .js section.visible { opacity: 1; transform: translateY(0); }
   section:last-of-type { border-bottom: none; }
 
   .num {
@@ -286,7 +298,6 @@
     letter-spacing: 0.5px;
   }
   .passport-stamp {
-    display: inline-block;
     border: 2px solid var(--forest);
     color: var(--forest);
     border-radius: 50%;
@@ -339,6 +350,11 @@
     justify-content: center;
   }
   .footer-badge .badge-base__link {
+    color: var(--sage);
+    font-weight: 500;
+  }
+  /* Hide the plain link only once LinkedIn has inserted its badge */
+  .footer-badge .LI-profile-badge:has(> :not(.badge-base__link)) .badge-base__link {
     display: none;
   }
 

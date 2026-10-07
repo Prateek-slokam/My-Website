@@ -345,18 +345,43 @@
     color: #a9b3ac;
     margin-bottom: 26px;
   }
-  .footer-badge {
-    display: flex;
-    justify-content: center;
+  .connect-card {
+    max-width: 420px;
+    margin: 0 auto;
+    padding: 32px 28px;
+    background: rgba(143,191,168,0.06);
+    border: 1px solid rgba(143,191,168,0.25);
+    border-radius: 10px;
+    text-align: center;
   }
-  .footer-badge .badge-base__link {
-    color: var(--sage);
+  .connect-card .connect-name {
+    font-family: 'Fraunces', serif;
+    font-size: 1.6em;
     font-weight: 500;
+    color: var(--cream);
+    margin: 0 0 8px;
   }
-  /* Hide the plain link only once LinkedIn has inserted its badge */
-  .footer-badge .LI-profile-badge:has(> :not(.badge-base__link)) .badge-base__link {
-    display: none;
+  .connect-card .connect-headline {
+    color: #d8e4dc;
+    font-size: 1.05em;
+    line-height: 1.5;
+    margin: 0 0 24px;
   }
+  .connect-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 11px 24px;
+    background: var(--sage);
+    color: var(--deep-forest);
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 0.95em;
+    text-decoration: none;
+    transition: background 0.25s ease, transform 0.25s ease;
+  }
+  .connect-btn:hover { background: #a9d4bd; transform: translateY(-2px); }
+  .connect-btn svg { width: 18px; height: 18px; fill: currentColor; }
 
   .back-to-top {
     position: fixed;
@@ -445,7 +470,9 @@
       color: var(--cream) !important;
     }
     footer .footer-text { color: #a9b3ac !important; }
-    .footer-badge { display: none !important; }
+    .connect-card { border: 1px solid rgba(143,191,168,0.4) !important; }
+    .connect-btn { background: var(--sage) !important; color: var(--deep-forest) !important; }
+    .connect-btn::after { content: ' 4  linkedin.com/in/prateekagarwal1002'; font-weight: 400; }
     main { padding: 0 40px !important; }
     h1, h2, h3 { color: inherit; }
   }
@@ -577,14 +604,18 @@
 
 <footer>
   <p class="footer-text">Designed and built by Prateek. Let's connect.</p>
-  <div class="footer-badge">
-    <div class="badge-base LI-profile-badge" data-locale="en_US" data-size="medium" data-theme="dark" data-type="HORIZONTAL" data-vanity="prateekagarwal1002" data-version="v1"><a class="badge-base__link LI-simple-link" href="https://in.linkedin.com/in/prateekagarwal1002?trk=profile-badge">Prateek Agarwal</a></div>
+  <div class="connect-card">
+    <p class="connect-name">Prateek Agarwal</p>
+    <p class="connect-headline">Senior Product Manager &middot; Designing for Impact &middot; Building for Scale</p>
+    <a class="connect-btn" href="https://www.linkedin.com/in/prateekagarwal1002" target="_blank" rel="noopener noreferrer">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+      View profile on LinkedIn
+    </a>
   </div>
 </footer>
 
 <button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0, behavior:'smooth'})" aria-label="Back to top">&#8593;</button>
 
-<script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
 <script>
   const sections = document.querySelectorAll('section');
   const observer = new IntersectionObserver((entries) => {

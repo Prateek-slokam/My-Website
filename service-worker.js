@@ -1,4 +1,4 @@
-const CACHE_NAME = "prateek-site-v8";
+const CACHE_NAME = "prateek-site-v9";
 const ASSETS_TO_CACHE = [
   "./",
   "index.html",
